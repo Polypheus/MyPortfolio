@@ -1,8 +1,28 @@
 body {
+    font-family: "Playwrite US Trad", cursive;
     height: 100dvh;
 }
 
+nav.top-menu {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border: 1px solid black;
+    padding-right: 5px;
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.top-menu a:hover {
+    color: orange;
+}
+
 .container {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,4 +33,12 @@ body {
 button {
     height: 70px;
     width: 100px;
+}
+
+@media (max-width: 600px) {
+    nav.top-menu {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start;
+        padding: 10px;
+    }
 }

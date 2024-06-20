@@ -13,9 +13,17 @@
         <div class="container">
             <h1>Welcome to the Main Page</h1>
             <p>This is the main page of my portfolio.</p>
-            <button>Click me</button>
+            <button id='click'>Click me</button>
         </div>
     </main>
     <%- include('partials/footer') %>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+const alertButton = document.getElementById('click');
+alertButton.addEventListener('click', () => {
+    alert('bat mo pinindot');
+});
+});
+</script>
 </html>
