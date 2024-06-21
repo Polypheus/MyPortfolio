@@ -61,7 +61,7 @@ body {
     }
     
     .piano {
-        flex-direction: column; /* Stack the keys vertically on small screens */
+        flex-direction: row; /* Stack the keys vertically on small screens */
         gap: 5px;
     }
     
