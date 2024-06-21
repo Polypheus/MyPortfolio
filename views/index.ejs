@@ -31,19 +31,19 @@
     <%- include('partials/footer') %>
 </body>
 <script>
-    // script.js
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
     const keys = document.querySelectorAll('.key');
     
-    // Create audio elements for each note
+    // Create audio elements for each note with GitHub raw URLs
     const notes = {
-        C: new Audio('notes/C.wav'),
-        D: new Audio('notes/D.wav'),
-        E: new Audio('notes/E.wav'),
-        F: new Audio('notes/F.wav'),
-        G: new Audio('notes/G.wav'),
-        A: new Audio('notes/A.wav'),
-        B: new Audio('notes/B.wav')
+        C: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/C.wav'),
+        D: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/D.wav'),
+        E: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/E.wav'),
+        F: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/F.wav'),
+        G: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/G.wav'),
+        A: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/A.wav'),
+        B: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/B.wav')
     };
 
     keys.forEach(key => {
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 
 </script>
 </html>
