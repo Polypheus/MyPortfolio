@@ -1,44 +1,50 @@
-body {
-    font-family: "Playwrite US Trad", cursive;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100dvh;
 }
 
-nav.top-menu {
-    gap: 10px;
+.piano {
     display: flex;
-    align-items: center;
-    justify-content: end;
-    border: 1px solid black;
-    padding-right: 5px;
-}
-
-.top-menu a {
-    text-decoration: none;
-    color: black;
-}
-
-.top-menu a:hover {
-    color: orange;
-}
-
-.container {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
     border: 1px solid black;
 }
-button {
-    height: 70px;
-    width: 100px;
+
+.key {
+    font-family: "Tiny5", sans-serif;
+    font-size: 2em;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
-@media (max-width: 600px) {
-    nav.top-menu {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: flex-start;
-        padding: 10px;
+.key:active {
+    transform: scale(0.9);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.bounce {
+    animation: bounce 0.5s;
+}
+
+.frontpage {
+    font-size:  100px;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
