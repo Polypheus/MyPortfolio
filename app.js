@@ -12,8 +12,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 const mainController = require('./controllers/mainController');
-app.get('/login', mainController.index);
-app.get('/main', mainController.about);
+app.get('/', mainController.index);
+app.get('/about', mainController.about);
 
 // Start the server
 app.listen(port, () => {

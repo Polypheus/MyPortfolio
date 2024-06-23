@@ -1,10 +1,10 @@
 // controllers/mainController.js
 
 exports.index = (req, res) => {
-    res.render('login', { title: 'Login' });
+    res.render('index', { title: 'Main Page' });
   };
   
   exports.about = (req, res) => {
-    res.render('main', { title: 'Main' });
+    res.render('about', { title: 'About Page' });
   };
   
