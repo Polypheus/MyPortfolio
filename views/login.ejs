@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="https://github.com/Polypheus/MyPortfolio/public/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <%- include('partials/header') %>
     <main>
         <div class="container">
-
-            <form action="/login" method="POST">
+            <form action="/login" method="POST" id="login">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
+                <input type="text" id="username" name="username" required>
             
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
+                <input type="password" id="password" name="password" required>
             
                 <button type="submit">Log In</button>
             </form>
-
         </div>
+
     </main>
     <%- include('partials/footer') %>
-    <script src="https://github.com/Polypheus/MyPortfolio/public/js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
