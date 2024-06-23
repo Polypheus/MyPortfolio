@@ -1,8 +1,4 @@
 <!-- views/index.ejs -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,57 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include('partials/header') %>
     <main>
         <div class="container">
-            <h1 class="frontpage">Hi Im Paul Andrew Consunji <br>
-                and this is my Portfolio</h1>
-                <div class="piano">
-                    <div class="key" data-note="C">A</div>
-                    <div class="key" data-note="D">B</div>
-                    <div class="key" data-note="E">C</div>
-                    <div class="key" data-note="F">D</div>
-                    <div class="key" data-note="G">E</div>
-                    <div class="key" data-note="A">F</div>
-                    <div class="key" data-note="B">G</div>
-                </div>
+            <div class="volume-control">
+                <button id="volume-btn">
+                    <img src="https://example.com/pixelated-volume-logo.png" alt="Volume">
+                </button>
+                <input type="range" id="volume-range" min="0" max="1" step="0.01" value="1">
+            </div>
+            <div class="piano">
+                <div class="key" data-note="C">A</div>
+                <div class="key" data-note="D">B</div>
+                <div class="key" data-note="E">C</div>
+                <div class="key" data-note="F">D</div>
+                <div class="key" data-note="G">E</div>
+                <div class="key" data-note="A">F</div>
+                <div class="key" data-note="B">G</div>
+            </div>
         </div>
     </main>
     <%- include('partials/footer') %>
-</body>
-<script>
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const keys = document.querySelectorAll('.key');
-    
-    // Create audio elements for each note with GitHub raw URLs
-    const notes = {
-        C: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/C.wav'),
-        D: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/D.wav'),
-        E: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/E.wav'),
-        F: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/F.wav'),
-        G: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/G.wav'),
-        A: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/A.wav'),
-        B: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/B.wav')
-    };
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const keys = document.querySelectorAll('.key');
+            const volumeBtn = document.getElementById('volume-btn');
+            const volumeRange = document.getElementById('volume-range');
+            
+            const notes = {
+                C: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/C.wav'),
+                D: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/D.wav'),
+                E: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/E.wav'),
+                F: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/F.wav'),
+                G: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/G.wav'),
+                A: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/A.wav'),
+                B: new Audio('https://raw.githubusercontent.com/Polypheus/MyPortfolio/main/notes/B.wav')
+            };
 
-    keys.forEach(key => {
-        key.addEventListener('click', () => {
-            const note = key.dataset.note;
-            if (notes[note]) {
-                notes[note].currentTime = 0; // Rewind to the start
-                notes[note].play();
-            }
-            key.classList.add('bounce');
-            setTimeout(() => {
-                key.classList.remove('bounce');
-            }, 500);
+            keys.forEach(key => {
+                key.addEventListener('click', () => {
+                    const note = key.dataset.note;
+                    if (notes[note]) {
+                        notes[note].currentTime = 0;
+                        notes[note].volume = volumeRange.value;
+                        notes[note].play();
+                    }
+                    key.classList.add('bounce');
+                    setTimeout(() => {
+                        key.classList.remove('bounce');
+                    }, 500);
+                });
+            });
+
+            volumeBtn.addEventListener('click', () => {
+                volumeRange.classList.toggle('hidden');
+            });
         });
-    });
-});
-
-
-</script>
+    </script>
+</body>
 </html>
