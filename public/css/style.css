@@ -1,8 +1,5 @@
-html {
+html, body {
     scroll-behavior: smooth;
-}
-
-body {
     margin: 0;
     padding: 0;
 }
@@ -40,30 +37,23 @@ body {
     object-fit: cover;
   }
 
-#about {
+  #about, #home, #skills {
     background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#home {
-    background-color: black;
-}
 #signature {
     position: relative;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    top: -20px;
-    font-family: "Playwrite MX", cursive;
-    z-index: 1;
-    color: white;
+    top: 50px; /* Adjusts vertical position */
+    font-family: "Playwrite MX", cursive; /* Applies custom font */
+    font-size: 20px;
+    z-index: 1; /* Positions above the gradient overlay */
+    color: white; /* Sets text color */
 }
-#skills {
-    background-color: black;
-}
+
 /* header */
 header {
     position: sticky;
@@ -73,6 +63,7 @@ header {
 }
 
 nav {
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,7 +93,7 @@ a {
 }
 
 li:active {
-     background-color: rgb(59, 59, 59);
+     background-color: rgb(255, 255, 255);
 }
 
 a:hover {
