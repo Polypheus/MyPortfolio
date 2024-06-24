@@ -1,5 +1,6 @@
 //import libraries in app.js which is the server
 const express = require('express');
+const path = require('path');
 //create express app
 const app = express();
 const mongoose = require('mongoose');
@@ -17,6 +18,13 @@ const PORT = 3000;
 //set middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public')); // Serve static files from "public"
+
+// Route to render the HTML page with video
+app.get('/', (req, res) => {
+    res.render('index', {
+        videoPath: '/Video/background.mp4' // Example path to your video file
+    });
+});
 
 //set view engine
 app.set('view engine', 'ejs'); // Use EJS for rendering views

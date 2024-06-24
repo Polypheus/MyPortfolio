@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,20 +10,51 @@ body {
 .container {
     margin-top: 0px;
     height: 100vh;
-    /* border: 1px solid black; */
 }
 
+/* Gradient overlay */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
+    z-index: 1; /* Ensure the gradient is above the video */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 #about {
+    background-color: black;
+}
+
+#home {
     background-color: black;
 }
 /* header */
 header {
+    z-index: 2;
     position: sticky;
     top: 0;
 }
 
 nav {
-    background-color: transparent;
+    background-color: white;
+    color: black;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
@@ -43,7 +78,7 @@ li {
 }
 
 a {
-    font-family: 'papyrus', sans-serif;
+    font-family: 'poppins', sans-serif;
     font-weight: bold;
     text-decoration: none;
     color: rgb(0, 0, 0);
