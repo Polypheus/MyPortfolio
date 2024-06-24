@@ -12,5 +12,11 @@ router.get('/about', (req, res) => {
     res.render('about');
   });
 
+//skills route
+  router.get('/skills', (req, res) => {
+    res.render('skills');
+  });
+
+
 //export router
 module.exports = router;
