@@ -21,7 +21,7 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
-    z-index: 1; /* Ensure the gradient is above the video */
+    z-index: 1;
 }
 
 .video-container {
@@ -31,31 +31,48 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 0;
   }
 
-  .video {
+.video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
 #about {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #home {
     background-color: black;
 }
+#signature {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    top: -20px;
+    font-family: "Playwrite MX", cursive;
+    z-index: 1;
+    color: white;
+}
+#skills {
+    background-color: black;
+}
 /* header */
 header {
-    z-index: 2;
     position: sticky;
     top: 0;
+    z-index: 2;
+    background-color: transparent;
 }
 
 nav {
-    background-color: white;
-    color: black;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,9 +98,13 @@ a {
     font-family: 'poppins', sans-serif;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 li:active {
-     background-color: rgb(207, 142, 0);
+     background-color: rgb(59, 59, 59);
+}
+
+a:hover {
+    color: orange;
 }

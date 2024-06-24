@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <%- include("./partials/header") %>
+
   <div class="container" id="home">
+    <h1 id="signature">Paul Andrew</h1>
     <div class="video-container" id="video-container">
         <video class="video" autoplay muted loop>
           <source src="/Video/background.mp4" type="video/mp4">
@@ -16,8 +21,9 @@
         </video>
       </div>
   </div>
+
     <%- include("./about")%>
     <%- include("./skills")%>
-  <%- include("./partials/footer") %>
+    <%- include("./partials/footer") %>
 </body>
 </html>
