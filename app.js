@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const mainController = require('./controllers/mainController');
 
 const PORT = 3000;
-const MONGODB_URI = 'your-mongodb-uri';
+// const MONGODB_URI = 'your-mongodb-uri';
 
 //connect to mongodb
 // mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
