@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
 </head>
+<style>
+    body {
+        background-color: black;
+    }
+    .aboutcontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-left: 18%;
+        margin-right: 18%;
+    }
+    .main-margin {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        gap: 80rem;
+    }
+    .margin {
+        height: 80vh;
+        width: 3px;
+        background: white;
+        margin: 4px;
+    }
+
+    h1 {
+        color: white;
+        font-family: "Anek Odia", sans-serif;
+        font-size: 80px;
+    }
+
+    p {
+        color: white;
+        font-family: "Anek Odia", sans-serif;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 40px;
+        }
+
+        .main-margin {
+            gap: 20rem;
+        }
+    }
+</style>
 <body>
-    <div class="container" id="about">
-        	<div>
-                
+    <div class="aboutcontainer" id="about">
+        <div class="intro">
+        <h1>"In a world too often governed by corruption and arrogance, it can be difficult to stay true to one's own philisophical and literary principles"</h1>
+        <p></p>
+        </div>
+        <div class="main-margin">
+            <div class="margin"> 
             </div>
+            <div class="margin">
+            </div>
+        </div>
     </div>
 </body>
 </html>
