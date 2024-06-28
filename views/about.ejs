@@ -6,12 +6,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Odia:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
 </head>
 <style>
     body {
         background-color: black;
     }
-    .aboutcontainer {
+    .aboutmecontainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-left: 18%;
+        margin-right: 18%;
+    }
+    .mottocontainer {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -34,10 +46,13 @@
 
     h1 {
         z-index: 1;
+        margin: 0;
         height: auto;
         color: white;
         font-family: "Anek Odia", sans-serif;
         font-size: 80px;
+        animation: autoshowanimation;
+        animation-timeline: view(50% auto);
     }
     h1:hover {
         color: orange;
@@ -82,7 +97,14 @@
     }
 </style>
 <body>
-    <div class="aboutcontainer" id="about">
+    <div class="aboutmecontainer"  id="about">
+        <h1 style="position: relative; right: 200px; font-size: 100px; font-family: Bodoni Moda, serif; ">Paul Andrew Consunji</h1>
+        <h1 style="position: relative; right: 200px; font-family: Bodoni Moda, serif;">Designer</h1>
+        <h1 style="font-size: 100px; font-family: Bodoni Moda, serif;">Developer</h1>
+        <h1 style="position: relative; left: 200px; font-family: Bodoni Moda, serif;">Gamer</h1>
+        <h1><a  style="font-family: Bodoni Moda, serif;" href="" >See More</a></h1>
+    </div>
+    <div class="mottocontainer">
         <div class="intro">
         <h1 class="autoanimation">"In a world too often governed by corruption and arrogance, it can be difficult to stay true to one's own philisophical and literary principles"</h1>
         </div>
