@@ -64,11 +64,27 @@
             gap: 20rem;
         }
     }
+
+    .autoanimation {
+        animation: autoshowanimation;
+        animation-timeline: view(auto auto);
+    }
+
+    @keyframes autoshowanimation {
+        from {
+            opacity: 0;
+            transform: translate(150px) scale(0.3);
+        }
+        to {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+    }
 </style>
 <body>
     <div class="aboutcontainer" id="about">
         <div class="intro">
-        <h1>"In a world too often governed by corruption and arrogance, it can be difficult to stay true to one's own philisophical and literary principles"</h1>
+        <h1 class="autoanimation">"In a world too often governed by corruption and arrogance, it can be difficult to stay true to one's own philisophical and literary principles"</h1>
         </div>
         <div class="main-margin">
             <div class="margin"> 
