@@ -7,6 +7,7 @@
 <style>
     body {
         background-color: black;
+        color: white;
     }
     #about {
         height: 100dvh;
@@ -15,18 +16,28 @@
         align-items: center;
         flex-direction: column;
     }
-
     h1 {
         margin: 0;
         padding: 0;
         font-size: 100px;
-        color: white;
         animation: autoshowanimation;
         animation-timeline: view(70% auto);
     }
+
+    a {
+        margin-top: 10px;
+    }
+
+    .linya {
+        width: 20%;
+        height: 2px;
+        background-color: white;
+    }
+
+
     @media (max-width: 768px) {
         h1 {
-            font-size: 20px;
+            font-size: 60px;
         }
 
         .main-margin {
@@ -50,14 +61,14 @@
         }
     }
 
-
 </style>
 <body>
-    <div id="about">
+    <div class="container" id="about">
         <h1>Designer</h1>
         <h1>Developer</h1>
         <h1>Gamer</h1>
         <h1>Enthusiast</h1>
+        <div class="linya"></div>
     </div>
 </body>
 </html>
