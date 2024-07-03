@@ -28,16 +28,18 @@
             margin-top: 10px;
         }
 
+/* ... other styles ... */
+
         @media (max-width: 768px) {
-            h1 {
+            .me {
                 font-size: 60px;
+            }
+            .main-guhit {
+                position: absolute;
+                top: -9999%;
             }
         }
 
-        .autoanimation {
-            animation: autoshowanimation;
-            animation-timeline: view(auto auto);
-        }
 
         @keyframes autoshowanimation {
             from {
