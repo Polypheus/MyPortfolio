@@ -8,6 +8,7 @@
     body {
         background-color: black;
         color: white;
+        overflow-x: hidden;
     }
     #about {
         height: 100dvh;
@@ -23,7 +24,9 @@
         animation: autoshowanimation;
         animation-timeline: view(80% auto);
     }
-
+    .me:hover {
+        color: orange;
+    }
     a {
             margin-top: 10px;
         }
@@ -33,10 +36,6 @@
         @media (max-width: 768px) {
             .me {
                 font-size: 60px;
-            }
-            .main-guhit {
-                position: absolute;
-                top: -9999%;
             }
         }
 
@@ -56,35 +55,35 @@
             position: absolute;
             display: flex;
             justify-content: center;
-            gap: 80rem;
             align-items: center;
-
+            left: 0;
+            right: 0;
+            gap: 70rem;
         }
         .guhit {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0;
             padding: 0;
             color: black;
             background-color: white;
-            height: 80vh;
+            height: 88vh;
             width: 80px;
+            z-index: 1;
         }
-
         .rotate {
             transform: rotate(-90deg);
             font-size: 100px;
         }
         marquee {
-            height: 80vh;
+            height: 100vh;
         }
 </style>
 <body>
     <div class="container" id="about">
         <div class="main-guhit">
-            <div class="guhit"><marquee behavior="" direction="up"><h1 class="rotate">Minimalist</h1></marquee></div>
-            <div class="guhit"><marquee behavior="" direction="up"><h1 class="rotate">Minimalist</h1></marquee></div>
+            <div class="guhit"><marquee behavior="" scrollamount="10" direction="up"><h1 class="rotate">Minimalist</h1></marquee></div>
+            <div class="guhit"><marquee behavior="" scrollamount="15" direction="up"><h1 class="rotate">Minimalist</h1></marquee></div>
         </div>
         <h1 class="me">Designer</h1>
         <h1 class="me">Developer</h1>
@@ -93,4 +92,8 @@
         <h1 class="me">Enthusiast</h1>
     </div>
 </body>
+
+<script>
+
+</script>
 </html>
