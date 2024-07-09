@@ -18,11 +18,83 @@
             flex-direction: column;
             padding: 50px;
         }
+
+        .bar {
+            fill: orange(180, 110, 70);
+        }
+        .bar-label {
+            fill: white;
+            text-anchor: middle;
+        }
+
+        .axis--x path {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container3" id="skills">
-
+        <svg width="600" height="400"></svg>
     </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        const skills = [
+            { skill: 'HTML5', level: 'Average' },
+            { skill: 'CSS3', level: 'Average' },
+            { skill: 'JavaScript', level: 'Beginner' },
+            { skill: 'Node.js', level: 'Beginner' },
+            { skill: 'PHP', level: 'Beginner' },
+            { skill: 'Figma', level: 'Intermediate' },
+            { skill: 'CodePen', level: 'Average' }
+        ];
+
+        const skillLevels = { 'Beginner': 1, 'Average': 2, 'Intermediate': 3, 'Professional': 4 };
+        const colors = { 'Beginner': '#d9534f', 'Average': '#f0ad4e', 'Intermediate': '#5bc0de', 'Professional': '#5cb85c' };
+
+        const svg = d3.select('svg');
+        const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        const width = +svg.attr('width') - margin.left - margin.right;
+        const height = +svg.attr('height') - margin.top - margin.bottom;
+        const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+        const x = d3.scaleBand().rangeRound([0, width]).padding(0.1)
+            .domain(skills.map(d => d.skill));
+        const y = d3.scaleLinear().rangeRound([height, 0])
+            .domain([0, 4]);
+
+        g.append('g')
+            .attr('class', 'axis axis--x')
+            .attr('transform', `translate(0,${height})`)
+            .call(d3.axisBottom(x));
+
+        g.append('g')
+            .attr('class', 'axis axis--y')
+            .call(d3.axisLeft(y).ticks(4));
+
+        g.selectAll('.bar')
+            .data(skills)
+            .enter().append('rect')
+            .attr('class', 'bar')
+            .attr('x', d => x(d.skill))
+            .attr('width', x.bandwidth())
+            .attr('y', height)
+            .attr('height', 0)
+            .attr('fill', d => colors[d.level])
+            .transition()
+            .duration(1000)
+            .attr('y', d => y(skillLevels[d.level]))
+            .attr('height', d => height - y(skillLevels[d.level]));
+
+        g.selectAll('.bar-label')
+            .data(skills)
+            .enter().append('text')
+            .attr('class', 'bar-label')
+            .attr('x', d => x(d.skill) + x.bandwidth() / 2)
+            .attr('y', height)
+            .transition()
+            .duration(1000)
+            .attr('y', d => y(skillLevels[d.level]) + 15)
+            .text(d => d.level);
+    </script>
 </body>
 </html>
