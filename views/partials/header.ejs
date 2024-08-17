@@ -1,40 +1,162 @@
 <!-- views/partials/header.ejs -->
+<style>
+    /* header */
+    header {
+        position: sticky; /* Fixed position for sticky header */
+        top: 0;
+        z-index: 10;
+    }
+
+    nav {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border: 1px solid white;
+        margin-top: 20px;
+    }
+
+    ul {
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        position: relative;
+    }
+
+    a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 50px;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    a:hover, .nav-link.active {
+        color: orange;
+        background-color: rgba(255, 165, 0, 0.2);
+        font-size: 18px;
+    }
+
+    /* Ensure the hamburger menu is visible and positioned correctly */
+    .hamburger {
+        display: none; /* Hide the hamburger menu by default */
+        cursor: pointer;
+        flex-direction: column;
+        gap: 7px;
+        width: 90%;
+        margin: 15px 0 0 5px;
+    }
+
+    .hamburger .bar {
+        width: 25px; /* Adjust size as needed */
+        height: 3px;
+        background-color: white;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+
+    .nav-links {
+        display: flex; /* Show menu items */
+        flex-direction: row; /* Default layout */
+    }
+
+    .nav-links.active {
+        display: flex; /* Ensure the menu is visible when active */
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            display: flex; /* Show navigation bar on small screens */
+            flex-direction: column;
+            position: relative; /* Adjust positioning for small screens */
+            border: none; /* Remove border on small screens */
+            margin-top: 0; /* Remove margin */
+        }
+
+        .hamburger {
+            display: flex; /* Show the hamburger icon on small screens */
+        }
+
+        .nav-links {
+            display: none; /* Hide the menu items by default */
+            flex-direction: column;
+            width: 100%; /* Full width on small screens */
+            background-color: black; /* Adjust background color as needed */
+        }
+
+        .nav-links.active {
+            display: flex; /* Show menu items when active */
+        }
+
+        ul {
+            flex-direction: column;
+        }
+
+        li {
+            width: 100%; /* Full width for each menu item */
+        }
+    }
+</style>
+
 <header>
     <nav>
-        <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
         <ul class="nav-links">
-            <li><a href="/#home" class="nav-link">Home</a></li>
-            <li><a href="/#about" class="nav-link">About me</a></li>
-            <li><a href="/#skills" class="nav-link">Skills</a></li>
-            <li><a href="/#contacts" class="nav-link">Contacts</a></li>
+            <li><a href="/#home" class="nav-link" onclick="closeMenu()">Home</a></li>
+            <li><a href="/#about" class="nav-link" onclick="closeMenu()">About me</a></li>
+            <li><a href="/#skills" class="nav-link" onclick="closeMenu()">Skills</a></li>
+            <li><a href="/#contacts" class="nav-link" onclick="closeMenu()">Contacts</a></li>
         </ul>
     </nav>
 </header>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('.nav-link');
-        const hamburger = document.querySelector('.hamburger-menu');
+    function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
 
-        // Toggle active class for nav links
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                links.forEach(link => link.classList.remove('active'));
-                link.classList.add('active');
-                navLinks.classList.remove('open'); // Close menu on link click
-                hamburger.classList.remove('open'); // Reset hamburger to original position
-            });
-        });
-
-        // Toggle navigation menu
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-            hamburger.classList.toggle('open');
-        });
-    });
+    function closeMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    }
 </script>

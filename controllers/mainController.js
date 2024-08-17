@@ -17,6 +17,10 @@ router.get('/about', (req, res) => {
     res.render('skills');
   });
 
+//contacts route
+  router.get('contacts', (req, res) => {
+    res.render('contacts');
+  });
 
 //export router
 module.exports = router;

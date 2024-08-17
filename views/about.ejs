@@ -1,102 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 <style>
-    body {
-        background-color: black;
-        color: white;
-        overflow-x: hidden;
-    }
     #about {
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
-    .me {
+
+    h1 {
         margin: 0;
-        padding: 0;
-        font-size: 100px;
-        animation: autoshowanimation;
-        animation-timeline: view(70% auto);
+        font-size: 120px;
     }
-    .me:hover {
-        color: orange;
+
+    @media (max-width:768px) {
+        h1 {
+            font-size: 70px;
+        }
     }
-    a {
-            margin-top: 10px;
-        }
-
-/* ... other styles ... */
-
-        @media (max-width: 768px) {
-            .me {
-                font-size: 60px;
-            }
-
-            .main-guhit {
-                top: -9999;
-            }
-        }
-
-
-        @keyframes autoshowanimation {
-            from {
-                opacity: 0;
-                transform: translate(150px) scale(0.3);
-            }
-            to {
-                opacity: 1;
-                transform: translate(0) scale(1);
-            }
-        }
-
-        .main-guhit {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            left: 0;
-            right: 0;
-            gap: 70rem;
-        }
-        .guhit {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            color: black;
-            background-color: white;
-            height: 88vh;
-            width: 80px;
-            z-index: 1;
-        }
-        .rotate {
-            transform: rotate(-90deg);
-            font-size: 100px;
-        }
-        marquee {
-            height: 100vh;
-        }
 </style>
-<body>
-    <div class="container" id="about">
-        <div class="main-guhit">
-            <div class="guhit"><marquee behavior="" scrollamount="15" direction="up"><h1 class="rotate">Minimalist</h1></marquee></div>
-            <div class="guhit"><marquee behavior="" scrollamount="15" direction="up"><h1 class="rotate">Minimalist</h1></marquee></div>
-        </div>
-        <h1 class="me">Designer</h1>
-        <h1 class="me">Developer</h1>
-        <h1 class="me">Gamer</h1>
-        <h1 class="me">Artist</h1>
-        <h1 class="me">Enthusiast</h1>
-    </div>
-</body>
 
-<script>
-
-</script>
-</html>
+<div class="container" id="about">
+    <h1>Designer</h1>
+    <h1>Developer</h1>
+    <h1>Gamer</h1>
+    <h1>Enthusiast</h1>
+</div>
