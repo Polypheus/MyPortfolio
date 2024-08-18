@@ -70,6 +70,9 @@ html {
   }
   
   .box-1 .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height:100%;
     width:auto;
     border: 1px solid black;
@@ -301,11 +304,20 @@ html {
     }
     .box-1 h1 { 
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
+        text-shadow: 3px 3px #5bb558;
+    }
+
+    .front-info {
+        height: 80px;
     }
 
     .box-1 .image-container {
-        width: auto;
+        width: 80%;
+        height: 80%;
+    }
+
+    .image-container img {
         height: 80%;
     }
   }
