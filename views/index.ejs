@@ -3,53 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <style>
-  /* Gradient overlay */
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
-    z-index: 1;
-}
-.video-container {
-    position: absolute;
-    top: -20vh;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-.video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  </style>
+  <title>Polypheus</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <%- include("./partials/header") %>
-  <div class="container" id="home">
-    <div class="video-container" id="video-container">
-        <video class="video" preload="auto" autoplay muted loop>
-          <source src="/Video/background.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+  <header>
+  <nav>
+  <h1>LOGO</h1>
+  <ul>
+  <li><a class="nav-link" href="#home">Home</a></li>
+  <li><a class="nav-link" href="#about">About</a></li>
+  <li><a class="nav-link" href="#projects">Projects</a></li>
+  <li><a class="nav-link" href="#contacts">Contacts</a></li>
+  </ul>
+  </nav>
+  </header>
+  
+  <div class = "container box-1" id="home">
+    <div class = image-container>
+      <img src = "/images/me.png" type="png"/>
+    </div>
+    <h1 class = "tada">Aspiring Web Designer/Developer</h1>
+    <div class = "front-info">
+     <div class="marquee-content">
+        Im Paul Andrew Consunji A Recent Graduate of Rizal Technological University with Latin Honor (Cum Laude)&nbsp;&nbsp;&nbsp;&nbsp;
+        Im Paul Andrew Consunji A Recent Graduate of Rizal Technological University with Latin Honor (Cum Laude)
+      </div>
+    </div>
+    <button onclick="">Projects</button>
+  </div>
+  
+  <div class="container box-2" id="about">
+      <div class= "four-words">
+    <h1 class = autoshow>Designer</h1>
+    <h1 class = autoshow>Developer</h1>
+    <h1 class = autoshow>Gamer</h1>
+    <h1 class = autoshow>Enthusiast</h1>
       </div>
   </div>
-    <%- include("./about")%>
-    <%- include("./skills")%>
-    <%- include("./partials/footer") %>
-    <%- include("./contacts") %>
-</body>
+  
+  <div class = "container box-3" id="projects">
+    <div class = "photocards">
+      <div class = "cards card-1"></div>
+      <div class = "cards card-2"></div>
+      <div class = "cards card-3"></div>
+      <div class = "cards card-4"></div>
+      <div class = "cards card-5"></div>
+      <div class = "cards card-6"></div>
+    </div>
+    </div>
+    
+    <div class = "container box-4" id = "contacts">
+      <div class="contacts-container">
+      <input type="text" placeholder="Want to send a Message?">
+      <button type="submit">Send</button>
+    </div>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+  <script src="js/script.js"></script>
 </html>

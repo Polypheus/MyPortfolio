@@ -23,7 +23,7 @@ app.set('view engine', 'ejs'); // Use EJS for rendering views
 // Route to render the HTML page with video
 app.get('/', (req, res) => {
     res.render('index', {
-        videoPath: '/Video/background.mp4' // Example path to your video file
+        videoPath: '/Video' // Example path to your video file
     });
 });
 

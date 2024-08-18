@@ -18,7 +18,7 @@ router.get('/about', (req, res) => {
   });
 
 //contacts route
-  router.get('contacts', (req, res) => {
+  router.get('/contacts', (req, res) => {
     res.render('contacts');
   });
 
