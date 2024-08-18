@@ -66,7 +66,7 @@ html {
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:100;
+    width:100%;
   }
   
   .box-1 .image-container {
@@ -110,7 +110,7 @@ html {
     font-family:'poppins', sans-serif;
     font-size:18px;
     font-weight:bold;
-    margin-top:10px;
+    margin-top: 20px;
     width:130px;
     height:60px;
     border-radius:10px;
@@ -118,6 +118,7 @@ html {
     background-color:#5bb558;
     color:black;
     box-shadow: black 5px 5px;
+    z-index: 2;
   }
   
   button:hover {
@@ -291,5 +292,20 @@ html {
     }
     100% {
       transform: scale(1);
+    }
+  }
+
+  @media (max-width:768px) {
+    ul {
+        display: none;
+    }
+    .box-1 h1 { 
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .box-1 .image-container {
+        width: auto;
+        height: 80%;
     }
   }
