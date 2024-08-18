@@ -88,6 +88,7 @@ html {
   .image-container img {
     height: 100%;
     filter: drop-shadow(10px 10px 4px #5bb558);
+    user-select: none;
   }
 
   .box-1 h1 {
@@ -95,6 +96,7 @@ html {
     font-size:90px;
     text-shadow: 5px 5px #5bb558;
     z-index: 2;
+    user-select: none;
   }
   
   .front-info {
