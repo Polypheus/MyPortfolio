@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
     scroll-behavior:smooth;
   }
@@ -6,7 +8,7 @@ html {
     width: 100%;
     position:sticky;
     top:0;
-    font-family:'poppins', sans-serif;
+    font-family:'raleway', sans-serif;
     z-index:10;
   }
   
@@ -61,7 +63,6 @@ html {
   }
   
   .box-1 {
-    font-family:'poppins', sans-serif;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -96,6 +97,7 @@ html {
     text-shadow: 5px 5px #5bb558;
     z-index: 2;
     user-select: none;
+    font-family:'raleway', sans-serif;
   }
   
   .front-info {
@@ -186,8 +188,15 @@ html {
     height: 250px;
     width: 200px;
     margin-top: 10px;
+    object-fit: cover;
+    border-radius: 10px;
   }
   
+  .cards img {
+    height: 90%;
+    width: 90%;
+    user-select: none;
+  }
   .cards:hover {
     height: 300px;
     width: 250px;
@@ -305,7 +314,7 @@ html {
     }
     .box-1 h1 { 
         text-align: center;
-        font-size: 40px;
+        font-size: 50px;
         text-shadow: 3px 3px #5bb558;
     }
 
@@ -321,5 +330,9 @@ html {
 
     .image-container img {
         height: 100%;
+    }
+
+    .box-2 h1 {
+      font-size: 60px;
     }
   }
