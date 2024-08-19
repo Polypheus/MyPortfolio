@@ -163,8 +163,12 @@ html {
   }
   .box-2 h1 {
     margin:0;
-    font-family:'poppins', sans-serif;
+    font-family:'raleway', sans-serif;
     font-size:80px;
+  }
+
+  .box-2 p {
+    font-family:'raleway', sans-serif;
   }
   
   .box-3 {
