@@ -17,8 +17,15 @@
   <li><a class="nav-link" href="#contacts">Contacts</a></li>
   </ul>
   </nav>
-  </header>
-  
+  </header> 
+<!-- The Modal -->
+  <div id="resume-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+          <iframe id="resume-preview" src="/resume/resume.pdf" type="application/pdf"></iframe>
+    </div>
+  </div>
+
   <div class = "container box-1" id="home">
     <div class = image-container>
       <img src = "/images/me.png"/>
@@ -31,14 +38,6 @@
       </div>
     </div>
     <button class="button button-1" id="open-modal-button">Resume</button>
-
-        <!-- The Modal -->
-        <div id="resume-modal" class="modal">
-          <div class="modal-content">
-              <span id="close-modal" class="close">&times;</span>
-              <iframe id="resume-preview" src="/resume/resume.pdf" type="application/pdf"></iframe>
-          </div>
-      </div>
   </div>
   
   <div class="container box-2" id="about">
